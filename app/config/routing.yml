@@ -1,3 +1,5 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+hub_api_get_sylius_version:
+    path: /sylius/version
+    methods: [GET]
+    defaults:
+        _controller: AppBundle:Packagist:getCurrentSyliusVersion

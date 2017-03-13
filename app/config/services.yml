@@ -1,0 +1,9 @@
+services:
+    packagist.api_client:
+        class: Packagist\Api\Client
+    hub.sylius_version_provider:
+        class: Sylius\Hub\Provider\SyliusVersionProvider
+        arguments: ['@packagist.api_client']
+    hub.cached_sylius_version_provider:
+        class: Sylius\Hub\Provider\CachedSyliusVersionProvider
+        arguments: ['@cache.app', '@hub.sylius_version_provider']
